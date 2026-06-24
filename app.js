@@ -1,67 +1,68 @@
-// Mobile nav
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+// ── Mobile nav ──────────────────────────────────────────────────────────────
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  const icon = navToggle.querySelector('[data-lucide]');
+  icon.setAttribute('data-lucide', navLinks.classList.contains('open') ? 'x' : 'menu');
+  lucide.createIcons();
+});
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-}
-
-// Nav shadow on scroll
-const nav = document.getElementById('nav');
-if (nav) {
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 80);
-  }, { passive: true });
-}
-
-// Audience tabs
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    const panel = document.getElementById('tab-' + btn.dataset.tab);
-    if (panel) panel.classList.add('active');
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.querySelector('[data-lucide]').setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
   });
 });
 
-// Netlify form submission
-const form = document.querySelector('form[name="enquiry"]');
-if (form) {
-  form.addEventListener('submit', async (e) => {
+// ── Nav scroll shadow ────────────────────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── Audience tabs ────────────────────────────────────────────────────────────
+const tabBtns   = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    tabBtns.forEach(b => b.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + target).classList.add('active');
+  });
+});
+
+// ── Netlify form ─────────────────────────────────────────────────────────────
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const body = new URLSearchParams();
-    data.forEach((value, key) => body.append(key, value));
+    const data = new FormData(contactForm);
     try {
-      const res = await fetch('/', {
+      await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
+        body: new URLSearchParams(data).toString()
       });
-      if (res.ok || res.redirected) {
-        form.style.display = 'none';
-        const success = document.querySelector('.form-success');
-        if (success) success.style.display = 'block';
-      } else {
-        throw new Error('Server error');
-      }
+      contactForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+      lucide.createIcons();
     } catch (err) {
-      // JS fetch failed — fall back to native submission which redirects to /success.html
-      form.submit();
+      alert('Something went wrong. Please email us directly at hello@algarve.dentist');
     }
   });
 }
 
-// Scroll fade-up animation
-const animTargets = document.querySelectorAll('.clinic-card, .step, .faq-item');
-
+// ── Scroll reveal ────────────────────────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -69,6 +70,9 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-animTargets.forEach(el => observer.observe(el));
+revealEls.forEach(el => observer.observe(el));
+
+// ── Initialise Lucide icons ───────────────────────────────────────────────────
+lucide.createIcons();

@@ -1,5 +1,4 @@
 [build]
-  command = ""
   publish = "."
 
 [[headers]]
@@ -8,7 +7,6 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/style.css"

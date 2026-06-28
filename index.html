@@ -17,11 +17,11 @@
   <meta property="og:url" content="https://algarve.dentist/" />
   <meta property="og:type" content="website" />
 
-  <!-- Fonts -->
+  <!-- Fonts — Cormorant Garamond (300/400/600) + DM Sans (300/400/500) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -66,65 +66,68 @@
 <nav class="nav" id="nav">
   <div class="nav-inner container">
     <a href="/" class="nav-logo">
-      ALGARVE<span class="nav-logo-dot">•</span>DENTIST
+      <span class="nav-logo-name">Algarve</span><span class="nav-logo-tld">.dentist</span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#clinics" class="nav-link">Find a Clinic</a></li>
       <li><a href="#dental-tourism" class="nav-link">Dental Tourism</a></li>
       <li><a href="#audiences" class="nav-link">Expats</a></li>
       <li><a href="#faq" class="nav-link">FAQ</a></li>
-      <li><a href="#contact" class="nav-link nav-cta">Get Help</a></li>
+      <li><a href="#contact" class="nav-link nav-cta">Get a Quote</a></li>
     </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
-      <i data-lucide="menu"></i>
-    </button>
+    <div class="nav-actions">
+      <a href="#contact" class="btn-nav-cta">Get a Quote</a>
+      <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- ── Hero ───────────────────────────────────────────────────────────────── -->
-<section class="hero section--dark">
-  <div class="container">
-    <p class="hero-badge">
-      <i data-lucide="shield-check" class="icon-sm"></i>
-      Trusted by expats &amp; dental tourists since 2015
-    </p>
-    <h1 class="display-xl hero-heading">
-      <em class="hero-heading-em">Quality Dental Care</em><br>
-      in The Algarve
-    </h1>
-    <p class="hero-sub">
-      The definitive guide to English-speaking dentists in the Algarve.
-      Save up to 70% on implants, veneers &amp; cosmetic dentistry —
-      without compromising on quality.
-    </p>
-    <div class="hero-ctas">
-      <a href="#clinics" class="btn btn-gold">Find a Dentist</a>
-      <a href="#dental-tourism" class="btn btn-outline-light">
-        Dental Tourism Guide
-        <i data-lucide="arrow-right" class="icon-sm"></i>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num">50+</span>
-        <span class="hero-stat-label">Vetted Clinics</span>
+<section class="hero section--white">
+  <div class="container hero-inner">
+
+    <!-- Text (left) -->
+    <div class="hero-content">
+      <span class="section-label">Algarve, Portugal</span>
+      <h1 class="hero-heading">
+        Find the Best<br><em>Dentist</em><br>in the Algarve
+      </h1>
+      <p class="hero-sub">
+        Independent guide to English-speaking dental clinics.
+        Save up to 70% vs UK prices — without compromising on quality.
+      </p>
+      <div class="hero-ctas">
+        <a href="#clinics" class="btn-primary">Browse Clinics</a>
+        <a href="#dental-tourism" class="btn-ghost">Dental Tourism Guide</a>
       </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">70%</span>
-        <span class="hero-stat-label">Average Savings vs UK</span>
-      </div>
-      <div class="hero-stat-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">5.2M</span>
-        <span class="hero-stat-label">Annual Visitors</span>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">50+</span>
+          <span class="hero-stat-label">Vetted Clinics</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">70%</span>
+          <span class="hero-stat-label">Average Savings vs UK</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">5.2M</span>
+          <span class="hero-stat-label">Annual Visitors</span>
+        </div>
       </div>
     </div>
+
+    <!-- Image (right) -->
+    <div class="hero-image">
+      <div class="hero-image-placeholder"></div>
+    </div>
+
   </div>
 </section>
 
 <!-- ── Entity Definition ──────────────────────────────────────────────────── -->
-<section class="entity-intro section--white">
+<section class="entity-intro section--off-white">
   <div class="container">
     <p class="entity-definition">
       Algarve Dentist is the leading English-language directory of dental clinics
@@ -136,7 +139,7 @@
 </section>
 
 <!-- ── Why the Algarve ────────────────────────────────────────────────────── -->
-<section class="why-algarve section section--cream" id="why-algarve">
+<section class="why-algarve section section--white" id="why-algarve">
   <div class="container">
     <div class="why-grid">
       <div class="why-content">
@@ -174,7 +177,7 @@
 </section>
 
 <!-- ── Audience Tabs ──────────────────────────────────────────────────────── -->
-<section class="audiences section section--white" id="audiences">
+<section class="audiences section section--off-white" id="audiences">
   <div class="container">
     <span class="section-label">Who We Help</span>
     <div class="tabs">
@@ -275,7 +278,7 @@
 </section>
 
 <!-- ── Clinic Directory ───────────────────────────────────────────────────── -->
-<section class="clinics section section--cream" id="clinics">
+<section class="clinics section section--white" id="clinics">
   <div class="container">
     <span class="section-label">Vetted Clinics</span>
     <h2 class="heading-lg">Find a Dentist in the Algarve</h2>
@@ -286,9 +289,7 @@
       <!-- CLINIC 1 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div>
-            <span class="clinic-badge-featured">Featured</span>
-          </div>
+          <span class="clinic-badge-featured">Featured</span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.9</span>
@@ -318,7 +319,7 @@
       <!-- CLINIC 2 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.9</span>
@@ -342,7 +343,7 @@
       <!-- CLINIC 3 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.9</span>
@@ -367,7 +368,7 @@
       <!-- CLINIC 4 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.8</span>
@@ -391,7 +392,7 @@
       <!-- CLINIC 5 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.8</span>
@@ -416,7 +417,7 @@
       <!-- CLINIC 6 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.4</span>
@@ -440,7 +441,7 @@
       <!-- CLINIC 7 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">5.0</span>
@@ -464,7 +465,7 @@
       <!-- CLINIC 8 -->
       <article class="clinic-card reveal">
         <div class="clinic-card-header">
-          <div></div>
+          <span></span>
           <div class="clinic-rating">
             <i data-lucide="star" class="icon-sm"></i>
             <span class="clinic-rating-score">4.9</span>
@@ -496,10 +497,10 @@
 </section>
 
 <!-- ── Dental Tourism Guide ───────────────────────────────────────────────── -->
-<section class="dental-tourism section section--dark" id="dental-tourism">
+<section class="dental-tourism section section--cream" id="dental-tourism">
   <div class="container">
     <span class="section-label">Dental Tourism</span>
-    <h2 class="heading-lg" style="color: var(--text-inverse); margin-bottom: var(--space-12);">Planning Your Dental Trip to the Algarve</h2>
+    <h2 class="heading-lg" style="margin-bottom: var(--space-12);">Planning Your Dental Trip to the Algarve</h2>
 
     <div class="tourism-grid">
       <div class="tourism-steps">
@@ -579,7 +580,7 @@
 </section>
 
 <!-- ── French Language Block ──────────────────────────────────────────────── -->
-<section class="french-block section section--cream" id="dentiste-algarve">
+<section class="french-block section section--off-white" id="dentiste-algarve">
   <div class="container">
     <div class="french-inner">
       <div class="french-flag-icon">FR</div>
@@ -595,7 +596,7 @@
 </section>
 
 <!-- ── Contact / Netlify Form ─────────────────────────────────────────────── -->
-<section class="contact section section--white" id="contact">
+<section class="contact section section--accent-pale" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
@@ -651,7 +652,7 @@
             <textarea id="message" name="message" rows="4" placeholder="Location preference, budget, questions..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn-gold btn-full">
+          <button type="submit" class="btn-primary btn-full">
             Send Enquiry
             <i data-lucide="arrow-right" class="icon-sm"></i>
           </button>
@@ -662,7 +663,7 @@
         </form>
 
         <div class="form-success" id="formSuccess">
-          <i data-lucide="check" class="icon-xl" style="color: var(--gold); margin-bottom: var(--space-4);"></i>
+          <i data-lucide="check" class="icon-xl" style="color: var(--color-accent); margin-bottom: var(--space-4);"></i>
           <h3>Thank you — we'll be in touch within 24 hours.</h3>
           <p>Check your inbox (and spam folder) for our reply.</p>
         </div>
@@ -672,7 +673,7 @@
 </section>
 
 <!-- ── Trust Section ──────────────────────────────────────────────────────── -->
-<section class="trust section section--cream" id="trust">
+<section class="trust section section--off-white" id="trust">
   <div class="container">
     <div class="trust-grid">
       <div class="trust-item reveal">
@@ -700,36 +701,40 @@
 </section>
 
 <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
-<footer class="footer section--dark">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo">ALGARVE<span class="nav-logo-dot">•</span>DENTIST</a>
-        <p class="footer-tagline">The trusted guide to dental care in the Algarve.</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <p class="footer-col-title">Find Care</p>
-          <ul>
-            <li><a href="#clinics">All Clinics</a></li>
-            <li><a href="#dental-tourism">Dental Tourism</a></li>
-            <li><a href="#audiences">Expat Guide</a></li>
-            <li><a href="#tab-emergency">Emergency Dentist</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-title">Information</p>
-          <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#dentiste-algarve">Dentiste en Algarve</a></li>
-            <li><a href="mailto:hello@algarve.dentist">Get Listed</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">ALGARVE<span>.DENTIST</span></p>
+      <p class="footer-tagline">The trusted independent guide to dental care in the Algarve.</p>
     </div>
-    <div class="footer-bottom">
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <span class="footer-col-title">Find Care</span>
+        <a href="#clinics">All Clinics</a>
+        <a href="#dental-tourism">Dental Tourism</a>
+        <a href="#audiences">Expat Guide</a>
+        <a href="#tab-emergency">Emergency Dentist</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Information</span>
+        <a href="#faq">FAQ</a>
+        <a href="#dentiste-algarve">Dentiste en Algarve</a>
+        <a href="mailto:hello@algarve.dentist">Get Listed</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Portfolio</span>
+        <a href="#">Algarve.Lawyer</a>
+        <a href="#">Algarve.Vet</a>
+        <a href="#">Algarve.Yachts</a>
+        <a href="#">Algarve.Luxury</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
       <p>© 2026 Algarve.Dentist — Independent dental directory. Not affiliated with any clinic.</p>
+      <p>Part of the <a href="#">Algarve Portfolio</a></p>
     </div>
   </div>
 </footer>
